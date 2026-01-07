@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png">
+    <title>Grocery Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar custom-navbar">
+    <div class="container-fluid">
+        <div class="logo-div">
+            <img src="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" alt="Logo" class="logo-img">
+        </div>
+        
+        <div class="middle-div">
+            <div class="search-box">
+                <input type="text" placeholder="Search product category">
+                <span class="search-icon"><i class="bi bi-search"></i></span>
+            </div>
+
+            <ul class="nav nav-links">
+                <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Shopping</a></li>
+                <li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+            </ul>
+        </div>
+
+        <div class="icons-div">
+            <img src="images/Frame 30485.png" alt="Profile" class="profile-img" id="profileIcon">
+            <a href="wishlist.html" class="nav-icon">
+                <i class="bi bi-heart"></i>
+            </a>
+            <a href="cart.html" class="nav-icon">
+                <i class="bi bi-cart3"></i>
+            </a>
+            <a href="#" class="nav-icon" data-bs-toggle="modal" data-bs-target="#notificationModal">
+                <i class="bi bi-bell"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="profile-dropdown" id="profileDropdown">
+  <h5 class="mb-3 text-white fs-3 text-center">My Accounts</h5> <hr style="color: white;">
+  <button onclick="goPersonal()">Personal Information</button>
+  <button onclick="window.location.href='myOrder.html'">My Order</button>
+  <button onclick="window.location.href='track.html'">Tracking Order</button>
+  <button onclick="window.location.href='password.html'">Password Manager</button>
+  <button onclick="window.location.href='logout.html'">Logout</button>
+</div>
+
+<script>
+    document.getElementById("profileIcon").addEventListener("click", () => {
+        document.getElementById("profileDropdown").style.display =
+        document.getElementById("profileDropdown").style.display === "block"
+        ? "none"
+        : "block";
+    });
+
+    document.addEventListener("click", (event) => {
+        const dropdown = document.getElementById("profileDropdown");
+        const icon = document.getElementById("profileIcon");
+
+        if (dropdown.style.display === "block" &&
+            !dropdown.contains(event.target) &&
+            !icon.contains(event.target)) {
+            dropdown.style.display = "none";
+        }
+    });
+
+    function goPersonal() {
+        window.location.href = "profile.html";
+    }
+</script>
+
+<div class="modal fade" id="notificationModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content notification-modal">
+            
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-semibold">Order Updates</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <ul class="notification-list">
+                    <li>
+                        “Your order has been placed successfully! We'll notify you once it's out for delivery.”
+                    </li>
+                    <li>
+                        “Good news! Your groceries are on the way. Track your delivery in real time.”
+                    </li>
+                    <li>
+                        “Your order has been delivered. Thank you for shopping with us!”
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Explore Fresh & Healthy</h1>
+            <h2>Convenience and Trust your way</h2>
+            <p>
+                Your trusted online grocery store for quick, easy,
+                and reliable shopping—freshness delivered within hours.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn shop-btn">Shop now →</a>
+                <a href="enquiry.html" class="enquiry-link">Enquiry Furniture</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ratings-section">
+    <div class="container d-flex align-items-center gap-3">
+        <div class="avatar-group">
+            <img src="images/Group 452.png" alt="">
+            <div class="avatar-plus">+</div>
+        </div>
+
+        <div class="rating-text">
+            <h6 class="mb-0 fw-bold">4.9k Ratings+</h6>
+            <small>Trusted by 50k customers</small>
+        </div>
+    </div>
+</section>
+
+<section class="why-choose-section">
+    <div class="container-fluid">
+        <h2 class="section-title text-center">Why Choose Us!</h2>
+        <div class="row justify-content-center g-4 mt-4">
+            <div class="col-md-2">
+                <div class="choose-card">
+                    <div class="circle-img">
+                        <img src="images/ChatGPT Image Aug 18, 2025, 01_07_22 PM 1.png" alt="image1">
+                    </div>
+                    <p>Fresh & Handpicked</p>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="choose-card">
+                    <img src="images/Man traveler walking in the city carry a suitcase… 1.png">
+                    <p>Fast & Reliable Delivery</p>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="choose-card">
+                    <img src="images/Illustration_isometric_concept__Safety_of_online_-removebg-preview (1) 2.png">
+                    <p>Affordable Prices</p>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="choose-card">
+                    <img src="images/58e00aaf-9d42-4a7f-a520-1d56226a063a-removebg-preview 1.png">
+                    <p>Wide Variety</p>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="choose-card">
+                    <img src="images/f7e828a3-1c78-4191-8c06-7fdc3a19940b-removebg-preview 1.png">
+                    <p>Quality & Trust</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="categories-section">
+    <div class="container-fluid">
+        <h2 class="categories-title text-center">Categories</h2>
+        <div class="row justify-content-center text-center mt-5 g-3">
+
+            <div class="col-md-2 category-item">
+                <img src="images/Group 30670.png" class="category-img" alt="Vegetables">
+                <p>Vegtables</p>
+            </div>
+
+            <div class="col-md-2 category-item">
+                <img src="images/Group 30671.png" class="category-img" alt="Fresh Fruits">
+                <p>Fresh fruits</p>
+            </div>
+
+            <div class="col-md-2 category-item">
+                <img src="images/Group 30672.png" class="category-img" alt="Milk & Egg">
+                <p>Milk&egg</p>
+            </div>
+
+            <div class="col-md-2 category-item">
+                <img src="images/Group 30673.png" class="category-img" alt="Dry Fruits">
+                <p>Dry fruits</p>
+            </div>
+
+            <div class="col-md-2 category-item">
+                <img src="images/Group 30674.png" class="category-img" alt="House Hold">
+                <p>House hold</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="deals-section">
+    <div class="container">
+        <h2 class="categories-title text-center">Deals flat 25% off</h2>
+        <div class="row justify-content-center text-center mt-5">
+            <div class="col-md-6 mb-5">
+                <img src="images/istockphoto-1015771620-612x612.png" class="deal-img" alt="Vegetables Offer">
+                <p class="deal-text">Fresh vegtables have 25% OFF</p>
+                <a href="category.html" class="btn deal-btn">Shop now</a>
+            </div>
+
+            <div class="col-md-6 mb-5">
+                <img src="images/istockphoto-1015771620-612x612-1.png" class="deal-img" alt="Fruits Offer">
+                <p class="deal-text">Fresh fruits have 25% OFF</p>
+                <a href="category.html" class="btn deal-btn">Shop now</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="featured-section">
+    <div class="container">
+        <h2 class="text-center featured-title">Featured products</h2>
+
+        <div class="row justify-content-center mt-5 g-3">
+            <div class="col-md-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">20%<br>off</span>
+                        <span class="heart-icon" onclick="toggleHeart(this)">
+                            <i class="bi bi-heart-fill"></i>
+                            <span class="heart-dot"></span>
+                        </span>
+
+                        <img src="images/istockphoto-177385867-612x612-removebg-preview.png" alt="Strawberry">
+                    </div>
+
+                    <div class="product-body">
+                        <div class="d-flex justify-content-between">
+                            <span class="category">Fruits</span>
+                            <span class="rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                        </div>
+
+                        <p class="product-name">Fresh Strawberry</p>
+                        <p class="weight">500g</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="price">$56</h5>
+                            <button class="add-btn">
+                                Add <i class="bi bi-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">20%<br>off</span>
+                        <span class="heart-icon" onclick="toggleHeart(this)">
+                            <i class="bi bi-heart-fill"></i>
+                            <span class="heart-dot"></span>
+                        </span>
+
+                        <img src="images/istockphoto-177385867-612x612-removebg-preview-1.png" alt="Vegetables">
+                    </div>
+
+                    <div class="product-body">
+                        <div class="d-flex justify-content-between">
+                            <span class="category">Vegetables</span>
+                            <span class="rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                        </div>
+
+                        <p class="product-name">Fresh Combo</p>
+                        <p class="weight">500g</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="price">$56</h5>
+                            <button class="add-btn">
+                                Add <i class="bi bi-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="discount-badge">20%<br>off</span>
+                        <span class="heart-icon" onclick="toggleHeart(this)">
+                            <i class="bi bi-heart-fill"></i>
+                            <span class="heart-dot"></span>
+                        </span>
+
+                        <img src="images/istockphoto-177385867-612x612-removebg-preview-2.png" alt="Lemon">
+                    </div>
+
+                    <div class="product-body">
+                        <div class="d-flex justify-content-between">
+                            <span class="category">Fruits</span>
+                            <span class="rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                        </div>
+
+                        <p class="product-name">Fresh Lemon</p>
+                        <p class="weight">500g</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="price">$56</h5>
+                            <button class="add-btn">
+                                Add <i class="bi bi-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<script>
+    function toggleHeart(element) {
+        element.classList.toggle("active");
+    }
+</script>
+
+<section class="faq-section py-5">
+    <div class="container">
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item faq-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq1">
+                    <strong>1.) Do you offer free delivery?</strong>
+                </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, we offer free standard delivery on all orders above ₹5,000.
+                        Express and scheduled delivery options are also available at checkout.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item faq-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq2">
+                    <strong>2.) How long will it take to receive my order?</strong>
+                </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Delivery times vary based on your location and product availability.
+                        Most orders are delivered within 5–10 business days.
+                        Custom-made items may take longer.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item faq-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq3">
+                    <strong>3.) Can I return or exchange grocery after purchase?</strong>
+                </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, you can return eligible items within 7 days of delivery.
+                        Items must be unused and in original condition.
+                        Please check our <a href="#">Return Policy</a> for details.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item faq-item">
+                <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#faq4">
+                    <strong>4.) How can I contact customer support?</strong>
+                </button>
+                </h2>
+                <div id="faq4" class="accordion-collapse collapse"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can reach us via live chat, email at support@furnishop.com, or call our helpline at 1800-123-4567 (Mon-Sat, 10AM - 6PM) .
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer-section">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-2 d-none d-lg-flex justify-content-center">
+                <img src="images/1eac1217-55f9-47c9-b7c1-fb018280bd68 1.png" alt="Footer Image" class="footer-side-img">
+            </div>
+
+            <div class="col-lg-10">
+                <div class="row gy-4">
+                    <div class="col-lg-2 col-md-6">
+                        <img src="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" alt="Logo" class="footer-logo mb-3">
+                        <p class="fw-semibold">Follow Us On :</p>
+                        <div class="social-icon">
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Company</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Customer service</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Track your order</a></li>
+                            <li><a href="#">Return</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Our information</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">User terms & Conditions</a></li>
+                            <li><a href="#">Return Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Contact info</h6>
+                        <p class="mb-1 fw-semibold">123-456-789</p>
+                        <p class="mb-1">example@gmail.com</p>
+                        <p>72, north street<br>Mumbai-001</p>
+                    </div>
+
+                    <div class="col-lg-2 d-none d-lg-block"></div>
+
+                </div>
+
+                <div class="footer-bottom text-center mt-4">
+                    <p class="mb-1">© 2025 My market. All rights reserved.</p>
+                    <p class="mb-0">
+                        <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

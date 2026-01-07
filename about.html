@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png">
+    <title>Grocery Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-main-title {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            border-radius: 18px;
+            object-fit: cover;
+        }
+
+        .about-content {
+            padding-left: 40px;
+        }
+
+        .small-title {
+            font-size: 26px;
+            color: #000;
+        }
+
+        .about-heading {
+            font-size: 36px;
+            font-weight: 500;
+            margin: 15px 0;
+            line-height: 1.7;
+        }
+
+        .about-heading span {
+            color: #0a8f2d;
+        }
+
+        .about-text {
+            font-size: 22px;
+            color: #555;
+            line-height: 1.7;
+            max-width: 520px;
+        }
+
+        .founder-section {
+            padding: 80px 0;
+        }
+
+        .founder-name {
+            font-size: 44px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .founder-role {
+            font-size: 22px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .founder-image-wrapper {
+            width: 100%;
+        }
+
+        .founder-image {
+            width: 100%;
+            border-radius: 18px;
+            object-fit: cover;
+        }
+
+        .team-section {
+            padding: 80px 0;
+        }
+
+        .team-small-title {
+            font-size: 18px;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .team-title {
+            font-size: 36px;
+            font-weight: 500;
+        }
+
+        .team-highlight {
+            font-size: 32px;
+            font-weight: 500;
+            color: #0a8f2d;
+        }
+
+        .team-img {
+            width: 100%;
+            max-width: 360px;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 25px;
+        }
+
+        .team-name {
+            font-size: 26px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .team-role {
+            font-size: 22px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar custom-navbar">
+    <div class="container-fluid">
+        <div class="logo-div">
+            <img src="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" alt="Logo" class="logo-img">
+        </div>
+        
+        <div class="middle-div">
+            <div class="search-box">
+                <input type="text" placeholder="Search product category">
+                <span class="search-icon"><i class="bi bi-search"></i></span>
+            </div>
+
+            <ul class="nav nav-links">
+                <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link " href="shop.html">Shopping</a></li>
+                <li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link " href="blog.html">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link " href="contact.html">Contact us</a></li>
+                <li class="nav-item"><a class="nav-link active" href="about.html">About us</a></li>
+            </ul>
+        </div>
+
+        <div class="icons-div">
+            <img src="images/Frame 30485.png" alt="Profile" class="profile-img" id="profileIcon">
+            <a href="wishlist.html" class="nav-icon">
+                <i class="bi bi-heart"></i>
+            </a>
+            <a href="cart.html" class="nav-icon">
+                <i class="bi bi-cart3"></i>
+            </a>
+            <a href="#" class="nav-icon" data-bs-toggle="modal" data-bs-target="#notificationModal">
+                <i class="bi bi-bell"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="profile-dropdown" id="profileDropdown">
+  <h5 class="mb-3 text-white fs-3 text-center">My Accounts</h5> <hr style="color: white;">
+  <button onclick="goPersonal()">Personal Information</button>
+  <button onclick="window.location.href='myOrder.html'">My Order</button>
+  <button onclick="window.location.href='track.html'">Tracking Order</button>
+  <button onclick="window.location.href='password.html'">Password Manager</button>
+  <button onclick="window.location.href='logout.html'">Logout</button>
+</div>
+
+<script>
+    document.getElementById("profileIcon").addEventListener("click", () => {
+        document.getElementById("profileDropdown").style.display =
+        document.getElementById("profileDropdown").style.display === "block"
+        ? "none"
+        : "block";
+    });
+
+    document.addEventListener("click", (event) => {
+        const dropdown = document.getElementById("profileDropdown");
+        const icon = document.getElementById("profileIcon");
+
+        if (dropdown.style.display === "block" &&
+            !dropdown.contains(event.target) &&
+            !icon.contains(event.target)) {
+            dropdown.style.display = "none";
+        }
+    });
+
+    function goPersonal() {
+        window.location.href = "profile.html";
+    }
+</script>
+
+<div class="modal fade" id="notificationModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content notification-modal">
+            
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-semibold">Order Updates</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <ul class="notification-list">
+                    <li>
+                        “Your order has been placed successfully! We'll notify you once it's out for delivery.”
+                    </li>
+                    <li>
+                        “Good news! Your groceries are on the way. Track your delivery in real time.”
+                    </li>
+                    <li>
+                        “Your order has been delivered. Thank you for shopping with us!”
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<section class="about-section">
+    <div class="container">
+        <h1 class="text-center about-main-title">About Us</h1>
+
+        <div class="row  mt-5">
+            <div class="col-lg-6">
+                <div class="image-wrapper">
+                <img src="images/Group 30729.png"
+                    alt="About Image">
+                </div>
+            </div>
+
+            <div class="col-lg-6 about-content">
+                <span class="small-title">About us</span>
+                <h2 class="about-heading">
+                Your Trusted Partner in <br>
+                <span>Fresh Grocery Delivery</span>
+                </h2>
+                <p class="about-text">
+                A grocery store is a retail store that primarily sells a general
+                line of food, such as fruits, vegetables, meat, poultry, canned
+                and frozen foods. Synonyms for grocery stores include supermarkets
+                and food stores.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="founder-section">
+    <div class="container">
+        <h1 class="founder-name text-center">Jenny Alexa</h1>
+        <p class="founder-role text-center">Our Founder</p>
+        <div class="founder-image-wrapper">
+        <img
+            src="images/istockphoto-2178135555-612x612.png"
+            alt="Founder Image"
+            class="founder-image"
+        >
+        </div>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="container">
+        <h2 class="text-center fs-2 mb-5">Our team</h2>
+        <h2 class="team-title text-center mb-5">
+        Meet The Passionate
+        </h2>
+        <h3 class="team-highlight text-center">
+        Team Behind Our Success
+        </h3>
+
+        <div class="row mt-5">
+            <div class="col-lg-4 col-md-6 mb-5 text-center">
+                <img src="images/istockphoto-2207874292-612x612.png"
+                    class="team-img" alt="Bessi Cooper">
+
+                <h4 class="team-name">BessiCooper</h4>
+                <p class="team-role">CEO</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-5 text-center">
+                <img src="images/istockphoto-1889337604-612x612.png"
+                    class="team-img" alt="Jane Cooper">
+
+                <h4 class="team-name">JaneCooper</h4>
+                <p class="team-role">General Manager</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-5 text-center">
+                <img src="images/istockphoto-927771720-612x612.png"
+                    class="team-img" alt="Robert Axe">
+                <h4 class="team-name">Robert Axe</h4>
+                <p class="team-role">Sales executive</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer-section">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-2 d-none d-lg-flex justify-content-center">
+                <img src="images/1eac1217-55f9-47c9-b7c1-fb018280bd68 1.png" alt="Footer Image" class="footer-side-img">
+            </div>
+
+            <div class="col-lg-10">
+                <div class="row gy-4">
+                    <div class="col-lg-2 col-md-6">
+                        <img src="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" alt="Logo" class="footer-logo mb-3">
+                        <p class="fw-semibold">Follow Us On :</p>
+                        <div class="social-icon">
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Company</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Customer service</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Track your order</a></li>
+                            <li><a href="#">Return</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Our information</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">User terms & Conditions</a></li>
+                            <li><a href="#">Return Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Contact info</h6>
+                        <p class="mb-1 fw-semibold">123-456-789</p>
+                        <p class="mb-1">example@gmail.com</p>
+                        <p>72, north street<br>Mumbai-001</p>
+                    </div>
+
+                    <div class="col-lg-2 d-none d-lg-block"></div>
+
+                </div>
+
+                <div class="footer-bottom text-center mt-4">
+                    <p class="mb-1">© 2025 My market. All rights reserved.</p>
+                    <p class="mb-0">
+                        <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

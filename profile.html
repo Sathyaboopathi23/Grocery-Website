@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png">
+    <title>Grocery Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .sidebar button {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 18px;
+        padding: 30px;
+        border-radius: 12px;
+        font-weight: 600;
+        border: none;
+        background:#4CAF50;
+        color: #fff;
+        font-size: 1.5rem;
+        border: 1px solid black;
+    }
+    
+    .sidebar .active {
+        background: #000 !important;
+    }
+    
+    .profile-img1{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    input {
+        border-radius: 8px !important;
+        height: 55px;
+    }
+    
+    .update-btn {
+        background: #4CAF50;
+        border: 1px solid black;
+        font-size: 1.2rem;
+        padding: 18px 45px;
+        border-radius: 12px;
+        font-size: 18px;
+        color: white;
+        font-weight: 600;
+    }
+    
+    label{
+        font-size: 1.5rem;
+    }
+    </style>
+</head>
+<body>
+<nav class="navbar custom-navbar">
+    <div class="container-fluid">
+        <div class="logo-div">
+            <img src="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" alt="Logo" class="logo-img">
+        </div>
+        
+        <div class="middle-div">
+            <div class="search-box">
+                <input type="text" placeholder="Search product category">
+                <span class="search-icon"><i class="bi bi-search"></i></span>
+            </div>
+
+            <ul class="nav nav-links">
+                <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">Shopping</a></li>
+                <li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+            </ul>
+        </div>
+
+        <div class="icons-div">
+            <img src="images/Frame 30485.png" alt="Profile" class="profile-img" id="profileIcon">
+            <a href="wishlist.html" class="nav-icon">
+                <i class="bi bi-heart"></i>
+            </a>
+            <a href="cart.html" class="nav-icon">
+                <i class="bi bi-cart3"></i>
+            </a>
+            <a href="#" class="nav-icon" data-bs-toggle="modal" data-bs-target="#notificationModal">
+                <i class="bi bi-bell"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="profile-dropdown" id="profileDropdown">
+  <h5 class="mb-3 text-white fs-3 text-center">My Accounts</h5> <hr style="color: white;">
+  <button onclick="goPersonal()">Personal Information</button>
+  <button onclick="window.location.href='myOrder.html'">My Order</button>
+  <button onclick="window.location.href='track.html'">Tracking Order</button>
+  <button onclick="window.location.href='password.html'">Password Manager</button>
+  <button onclick="window.location.href='logout.html'">Logout</button>
+</div>
+
+<script>
+    document.getElementById("profileIcon").addEventListener("click", () => {
+        document.getElementById("profileDropdown").style.display =
+        document.getElementById("profileDropdown").style.display === "block"
+        ? "none"
+        : "block";
+    });
+
+    document.addEventListener("click", (event) => {
+        const dropdown = document.getElementById("profileDropdown");
+        const icon = document.getElementById("profileIcon");
+
+        if (dropdown.style.display === "block" &&
+            !dropdown.contains(event.target) &&
+            !icon.contains(event.target)) {
+            dropdown.style.display = "none";
+        }
+    });
+
+    function goPersonal() {
+        window.location.href = "profile.html";
+    }
+</script>
+
+<div class="modal fade" id="notificationModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content notification-modal">
+            
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-semibold">Order Updates</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <ul class="notification-list">
+                    <li>
+                        “Your order has been placed successfully! We'll notify you once it's out for delivery.”
+                    </li>
+                    <li>
+                        “Good news! Your groceries are on the way. Track your delivery in real time.”
+                    </li>
+                    <li>
+                        “Your order has been delivered. Thank you for shopping with us!”
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-between">
+    <h2 style="text-align: center;font-size: 2.5rem;margin: 50px auto;font-weight: bold;">My Account</h2>
+    <img src="images/69a898abc6ad0a9cd5672bf64272f4f465b2ce6b.jpg" alt="" class="profile-img1">
+    </div>
+    <div class="row">
+
+        <div class="col-md-3 sidebar p-4">
+            <button class="active">Personal Information</button>
+            <button onclick="window.location.href='myOrder.html'">My Order</button>
+            <button onclick="window.location.href='password.html'">Password Manager</button>
+            <button onclick="location.href='logout.html'">Logout</button>
+        </div>
+
+        <div class="col-md-9 p-4">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label>First Name</label>
+                    <input class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label>Last Name</label>
+                    <input class="form-control">
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <label>E-mail</label>
+                <input class="form-control"">
+            </div>
+
+            <div class="row mb-4">
+                <label>Phone</label>
+                <input class="form-control">
+            </div>
+
+            <div class="row mb-4">
+                <label>Gender</label>
+                <input class="form-control">
+            </div>
+
+            <button class="update-btn">Update Change</button>
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer-section">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-2 d-none d-lg-flex justify-content-center">
+                <img src="images/1eac1217-55f9-47c9-b7c1-fb018280bd68 1.png" alt="Footer Image" class="footer-side-img">
+            </div>
+
+            <div class="col-lg-10">
+                <div class="row gy-4">
+                    <div class="col-lg-2 col-md-6">
+                        <img src="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" alt="Logo" class="footer-logo mb-3">
+                        <p class="fw-semibold">Follow Us On :</p>
+                        <div class="social-icon">
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Company</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Customer service</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Track your order</a></li>
+                            <li><a href="#">Return</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Our information</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">User terms & Conditions</a></li>
+                            <li><a href="#">Return Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Contact info</h6>
+                        <p class="mb-1 fw-semibold">123-456-789</p>
+                        <p class="mb-1">example@gmail.com</p>
+                        <p>72, north street<br>Mumbai-001</p>
+                    </div>
+
+                    <div class="col-lg-2 d-none d-lg-block"></div>
+
+                </div>
+
+                <div class="footer-bottom text-center mt-4">
+                    <p class="mb-1">© 2025 My market. All rights reserved.</p>
+                    <p class="mb-0">
+                        <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

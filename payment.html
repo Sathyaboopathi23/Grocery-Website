@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png">
+    <title>Grocery Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .step-wrapper {
+            background: #4caf50;
+            padding: 25px 40px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .step {
+            color: #fff;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .step input {
+            display: none;
+        }
+
+        .step .radio {
+            width: 18px;
+            height: 18px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            position: relative;
+            background-color: #fff;
+        }
+
+        .step input:checked + .radio::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background:#4caf50;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .step input:checked ~ span,
+        .step input:checked + .radio {
+            font-weight: 600;
+        }
+
+         .product-card {
+            background: #fff;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .product-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            border: 1px solid #000;
+            padding: 10px;
+            margin-right: 30px;
+        }
+
+        .product-details {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-name {
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .product-date {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .product-price {
+            font-size: 22px;
+            font-weight: 600;
+        }   
+
+        .summary-card {
+            border: 1px solid #000;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .summary-card h5 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .summary-total {
+            border-top: 1px solid #000;
+            margin-top: 15px;
+            padding-top: 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .checkout-btn {
+            background: #000;
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 15px;
+        }
+
+        .coupon-input {
+            border-radius: 25px;
+            padding: 10px 20px;
+            border: 1px solid #999;
+            width: 200px;
+        }
+
+        .apply-btn {
+            background: #4caf50;
+            color: #000;
+            border-radius: 25px;
+            padding: 10px 25px;
+            border: none;
+        }
+
+        .dropdown-toggle {
+            font-size: 28px;
+            font-weight: 600;
+            border: none;
+            background: none;
+            color: black;
+        }
+
+        .dropdown-menu {
+            width: 100%;
+            border-radius: 12px;
+            padding: 20px;
+            border: none;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .pay-item {
+            font-size: 25px;
+            font-weight: 500;
+            padding: 15px 10px;
+            cursor: pointer;
+        }
+
+        .pay-item:hover{
+            background-color:#4caf50 ;
+        }
+
+        .pay-icon {
+            height: 34px;
+        }
+
+            .payment-box {
+        background: #4caf50;
+        color: #fff;
+        padding: 40px;
+        border-radius: 15px;
+        }
+
+        .payment-box h4 {
+        text-align: center;
+        margin-bottom: 25px;
+        }
+
+        .payment-box label {
+        margin-top: 15px;
+        }
+
+        .payment-box input {
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        }
+
+        .payment-box input::placeholder {
+        color: #eaeaea;
+        }
+
+        .confirm-btn {
+        background: #000;
+        color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 25px;
+        }
+
+        .success-box{
+            background:#4caf50;
+            padding:40px;
+            border-radius:10px;
+        }
+        .success-icon{
+            width:150px;
+            display:block;
+            margin:auto;
+        }
+
+        #successBox {
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar custom-navbar">
+    <div class="container-fluid">
+        <div class="logo-div">
+            <img src="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" alt="Logo" class="logo-img">
+        </div>
+        
+        <div class="middle-div">
+            <div class="search-box">
+                <input type="text" placeholder="Search product category">
+                <span class="search-icon"><i class="bi bi-search"></i></span>
+            </div>
+
+            <ul class="nav nav-links">
+                <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link " href="shop.html">Shopping</a></li>
+                <li class="nav-item"><a class="nav-link" href="category.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link " href="blog.html">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link " href="contact.html">Contact us</a></li>
+                <li class="nav-item"><a class="nav-link " href="about.html">About us</a></li>
+            </ul>
+        </div>
+
+        <div class="icons-div">
+            <img src="images/Frame 30485.png" alt="Profile" class="profile-img" id="profileIcon">
+            <a href="wishlist.html" class="nav-icon">
+                <i class="bi bi-heart"></i>
+            </a>
+            <a href="cart.html" class="nav-icon">
+                <i class="bi bi-cart3"></i>
+            </a>
+            <a href="#" class="nav-icon" data-bs-toggle="modal" data-bs-target="#notificationModal">
+                <i class="bi bi-bell"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="profile-dropdown" id="profileDropdown">
+  <h5 class="mb-3 text-white fs-3 text-center">My Accounts</h5> <hr style="color: white;">
+  <button onclick="goPersonal()">Personal Information</button>
+  <button onclick="window.location.href='myOrder.html'">My Order</button>
+  <button onclick="window.location.href='track.html'">Tracking Order</button>
+  <button onclick="window.location.href='password.html'">Password Manager</button>
+  <button onclick="window.location.href='logout.html'">Logout</button>
+</div>
+
+<script>
+    document.getElementById("profileIcon").addEventListener("click", () => {
+        document.getElementById("profileDropdown").style.display =
+        document.getElementById("profileDropdown").style.display === "block"
+        ? "none"
+        : "block";
+    });
+
+    document.addEventListener("click", (event) => {
+        const dropdown = document.getElementById("profileDropdown");
+        const icon = document.getElementById("profileIcon");
+
+        if (dropdown.style.display === "block" &&
+            !dropdown.contains(event.target) &&
+            !icon.contains(event.target)) {
+            dropdown.style.display = "none";
+        }
+    });
+
+    function goPersonal() {
+        window.location.href = "profile.html";
+    }
+</script>
+
+<div class="modal fade" id="notificationModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content notification-modal">
+            
+            <div class="modal-header border-0">
+                <h5 class="modal-title fw-semibold">Order Updates</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <ul class="notification-list">
+                    <li>
+                        “Your order has been placed successfully! We'll notify you once it's out for delivery.”
+                    </li>
+                    <li>
+                        “Good news! Your groceries are on the way. Track your delivery in real time.”
+                    </li>
+                    <li>
+                        “Your order has been delivered. Thank you for shopping with us!”
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="step-wrapper">
+        <label class="step active">
+            <input type="radio" name="step" >
+            <span class="radio"></span>
+            Product card
+        </label>
+
+        <label class="step">
+            <input type="radio" name="step" >
+            <span class="radio"></span>
+            Check out page
+        </label>
+
+        <label class="step">
+            <input type="radio" name="step" checked>
+            <span class="radio"></span>
+            Payment page
+        </label>
+    </div>
+
+    <div class="product-card">
+        <img src="images/bhgu.png">
+        <div class="product-details">
+            <div class="product-name">Ashirvaad Attaas</div>
+            <div class="product-date">22 August 2025</div>
+            <div class="product-price">$200</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="images/banana.png">
+        <div class="product-details">
+            <div class="product-name">Banana</div>
+            <div class="product-date">22 August 2025</div>
+            <div class="product-price">$14</div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="images/cabbage.png">
+        <div class="product-details">
+            <div class="product-name">Cabbage</div>
+            <div class="product-date">22 August 2025</div>
+            <div class="product-price">$134</div>
+        </div>
+    </div>
+  
+    <div class="row d-flex justify-content-between mt-5">
+        <div class="col-lg-4">
+            <div class="summary-card">
+                <h5>Order Summary</h5>
+                <div class="summary-row">
+                    <span>Items</span>
+                    <span>3</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$348</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Rs.00.00</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Taxes</span>
+                    <span>Rs.00.00</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Coupen Discount</span>
+                    <span>$100</span>
+                </div>
+
+                <div class="summary-total summary-row">
+                    <span>Total</span>
+                    <span>$248</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6" >
+            <div class="payment-box1 mx-auto" id="paymentDropdownBox">
+
+                <div class="dropdown">
+                    <button class="dropdown-toggle w-100 d-flex justify-content-between align-items-center"
+                            data-bs-toggle="dropdown">
+                        Choose payment
+        
+                    </button>
+
+                    <ul class="dropdown-menu">
+
+                        <li class="d-flex justify-content-between align-items-center pay-item dropdown-choice">
+                            Google pay
+                            <img src="images/gpay.png"
+                                class="pay-icon">
+                        </li>
+
+                        <li class="d-flex justify-content-between align-items-center pay-item">
+                            Phone pay
+                            <img src="images/phonepay.jfif"
+                                class="pay-icon">
+                        </li>
+
+                        <li class="d-flex justify-content-between align-items-center pay-item">
+                            Pay pal
+                            <img src="images/paypal.png"
+                                class="pay-icon">
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="payment-options-box p-4 shadow-sm rounded" id="paymentDetailBox" style="display:none; background:#4caf50;">
+                <h4 class="fw-bold text-center mb-4">Payment options</h4>
+
+                <p class="fw-bold mb-2">UPI PAYMENT :</p>
+
+                <div class="d-flex justify-content-between align-items-center p-3 rounded shadow-sm bg-white">
+                    <img src="images/gpay.png" width="60">
+                    <img src="images/phonepay.jfif" width="60">
+                    <img src="images/paypal.png" width="60">
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-dark px-4 py-2 rounded-pill" id="detailBtn">Enter a Details</button>
+                </div>
+            </div>
+
+
+            <div class="payment-box" style="display: none;" id="payment-box">
+                <h4>Payment Details</h4>
+
+                <label>Enter Name :</label>
+                <input type="text" class="form-control">
+
+                <label>Enter UPI ID :</label>
+                <input type="text" class="form-control">
+
+                <button class="confirm-btn" onclick="showSuccess()">Confirm payment</button>
+            </div>
+
+            <div id="successBox" class="success-box text-center d-none" >
+                <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" class="success-icon">
+                <h4 class="fw-bold mt-3" style="color: white;">Payment successfully done</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll(".dropdown-choice").forEach(item => {
+        item.addEventListener("click", function () {
+            document.getElementById("paymentDropdownBox").style.display = "none";
+            document.getElementById("paymentDetailBox").style.display = "block";
+
+        });
+    });
+
+    document.getElementById("detailBtn").addEventListener("click",()=>{
+        document.getElementById("paymentDetailBox").style.display="none";
+        document.getElementById("payment-box").style.display='block'
+    })
+
+    function showSuccess() {
+        document.getElementById("payment-box").classList.add("d-none");
+        document.getElementById("successBox").classList.remove("d-none");
+
+        setTimeout(() => {
+            window.location.href = "myOrder.html";
+        }, 3000);
+    }
+</script>
+
+<footer class="footer-section">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-2 d-none d-lg-flex justify-content-center">
+                <img src="images/1eac1217-55f9-47c9-b7c1-fb018280bd68 1.png" alt="Footer Image" class="footer-side-img">
+            </div>
+
+            <div class="col-lg-10">
+                <div class="row gy-4">
+                    <div class="col-lg-2 col-md-6">
+                        <img src="images/f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" alt="Logo" class="footer-logo mb-3">
+                        <p class="fw-semibold">Follow Us On :</p>
+                        <div class="social-icon">
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Company</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Career</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Customer service</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Track your order</a></li>
+                            <li><a href="#">Return</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Our information</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">User terms & Conditions</a></li>
+                            <li><a href="#">Return Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6">
+                        <h6 class="footer-title">Contact info</h6>
+                        <p class="mb-1 fw-semibold">123-456-789</p>
+                        <p class="mb-1">example@gmail.com</p>
+                        <p>72, north street<br>Mumbai-001</p>
+                    </div>
+
+                    <div class="col-lg-2 d-none d-lg-block"></div>
+
+                </div>
+
+                <div class="footer-bottom text-center mt-4">
+                    <p class="mb-1">© 2025 My market. All rights reserved.</p>
+                    <p class="mb-0">
+                        <a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

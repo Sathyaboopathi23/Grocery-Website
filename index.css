@@ -1,0 +1,422 @@
+.register-btn {
+    background: #4caf50;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.register-btn:hover {
+    background: #43a047;
+}
+
+.register-modal {
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 25px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+.custom-input {
+    border-radius: 25px;
+    padding: 12px 20px;
+    border: 1.5px solid #4caf50;
+}
+
+.custom-input::placeholder{
+    color:#43a047;
+}
+
+.login-btn {
+    background: #4caf50;
+    color: #fff;
+    border-radius: 25px;
+    padding: 8px 30px;
+}
+
+.login-btn:hover {
+    background: #43a047;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+}
+
+.divider span {
+    padding: 0 10px;
+    font-weight: 500;
+}
+
+.social-icons i {
+    font-size: 22px;
+    margin: 0 10px;
+    color: #4caf50;
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.create-link {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.hero-section {
+    background: url("images/Supermarket\ Finds_\ A\ Cart\ Full\ of\ Fresh\ Choices\ \ Stock\ Photo\ _\ Adobe\ Stock\ 1.png") center/cover no-repeat;
+    min-height: 70vh;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 650px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.hero-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.shop-btn {
+    padding: 10px 25px;
+    border-radius: 15px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.enquiry-link {
+    color: #ffc107;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.ratings-section {
+    padding: 30px 0;
+    background: #fff;
+}
+
+.avatar-group {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-group img{
+    width: 100%;
+    height: 70px;
+    border: 3px solid #fff;
+    object-fit: cover;
+    margin-right: -10px;
+}
+
+.avatar-plus {
+    background: #f5a000;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.rating-text small {
+    color: #777;
+}
+
+.why-choose-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.section-title {
+    color: #f39c12;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.choose-card {
+    background: #f7f7f7;
+    border-radius: 18px;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.choose-card img{
+     width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.choose-card p {
+    color: #000;
+    font-weight: 600;
+    margin: 0;
+}
+
+.categories-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.categories-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f39c12;
+}
+
+.category-img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.category-item p {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 500;
+    margin: 0;
+}
+
+.deals-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.deal-img {
+    width: 100%;
+    max-width: 520px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+
+.deal-text {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.deal-btn {
+    background: #2dbb39;
+    color: #fff;
+    padding: 12px 45px;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.deal-btn:hover {
+    background: #26a530;
+    color: #fff;
+}
+
+.featured-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.featured-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #f39c12;
+}
+
+.product-card {
+    background: #f2f2f2;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.product-img {
+    position: relative;
+    cursor: pointer;
+}
+
+.product-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #b8e63c;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    line-height: 1.2;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.heart-icon i {
+    font-size: 22px;
+    color: #2ecc71;
+    -webkit-text-stroke:2.5px #2ecc71;
+    -webkit-text-fill-color: #d9d9d9;
+}
+
+.heart-dot {
+    width: 8px;
+    height: 8px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+.heart-icon.active .heart-dot {
+    display: block;
+}
+
+.product-body {
+    padding: 15px;
+}
+
+.category {
+    color: green;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.rating {
+    color: #000;
+    font-weight: 500;
+}
+
+.rating i {
+    color: gold;
+}
+
+.product-name {
+    margin: 6px 0;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.weight {
+    color: gray;
+    font-size: 1.1rem;
+}
+
+.price {
+    margin: 0;
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+.add-btn {
+    border: 1px solid #000;
+    background: #fff;
+    padding: 6px 14px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+}
+
+.add-btn i {
+    color: red;
+}
+
+.faq-section {
+  background: #fff;
+}
+
+.faq-item {
+  border: 1px solid #f7e0be;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.accordion-button {
+  background: #fff;
+  box-shadow: none;
+  font-size: 1.5rem;
+  padding: 20px;
+}
+
+.accordion-button::after {
+  background-size: 18px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #000;
+  background: #fff;
+}
+
+.accordion-body {
+  font-size: 1.2rem;
+  color: #000;
+  line-height: 1.7;
+  padding: 20px;
+}

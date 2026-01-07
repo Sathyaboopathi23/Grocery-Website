@@ -1,0 +1,180 @@
+* {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.custom-navbar {
+    padding: 15px 0;
+    background: #fff;
+}
+
+.logo-img {
+    width: 90px;
+}
+
+.search-box {
+    background: #4caf50;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    max-width: 900px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    width: 100%;
+}
+
+.search-box input::placeholder {
+    color: #eaffea;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.search-icon {
+    color: white;
+    font-size: 18px;
+}
+
+.nav-links {
+    justify-content: center;
+}
+
+.nav-links .nav-link {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 8px;
+}
+
+.nav-links .nav-link.active {
+    color: #4caf50;
+}
+
+.icons-div {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.profile-img {
+    width: 75px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.nav-icon {
+    color: #000;
+    font-size: 2rem;
+    position: relative;
+}
+
+.nav-icon:hover {
+    color: #4caf50;
+}
+
+.notification-modal {
+    background: #4caf50;
+    color: #000;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.notification-modal .modal-title {
+    color: #000;
+}
+
+.notification-list {
+    padding-left: 18px;
+}
+
+.notification-list li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 160px;
+    right: 20px;
+    width: 300px;
+    display: none;
+    border-radius: 10px;
+    background:#4caf50;
+    padding: 10px;
+    z-index: 9999;
+}
+.profile-dropdown button {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 8px;
+    padding: 12px;
+    background:#4caf50;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+}
+.profile-dropdown button:hover {
+    background: #266829;
+}
+
+.footer-section {
+  background: #f7a600;
+  padding: 40px 0 20px;
+}
+
+.footer-side-img {
+  width: 70%;
+  object-fit: cover;
+}
+
+.footer-logo {
+  max-width: 120px;
+}
+
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.footer-links a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.social-icon a {
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.footer-bottom a{
+  font-size: 14px;
+  text-decoration: none;
+  color:#000;
+}
+
+
